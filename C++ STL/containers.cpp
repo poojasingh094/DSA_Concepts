@@ -67,3 +67,27 @@ v.pop_back() //{300,10,10,1}
 v1.swap(v2); // will swap two vector
 v.clear(); // erase entire vector
 cout << v.empty(); // returns false
+
+/* list
+- Allows fast insertion and deletion at both the front and back of the list.
+- Provides operations such as push_front, push_back, pop_front, pop_back, etc.
+- Internal operations use a doubly linked list structure,
+*/
+
+list<int>ls;
+ls.push_back(2);
+ls.push_front(5); // Inserting at the beginning (or any position other than the end) using insert can be slower because it involves shifting all subsequent elements to make space for the new element.
+ls.pop_front();
+//rest fns are same as vector: begin, end, clear,size, insert, swap, etc.
+
+//Deque
+
+deque<int>dq;
+dq.push_back(1);
+dq.push_front(2);
+dq.pop_back();
+dq.pop_front();
+//rest fns are same as vector and list
+
+
+
