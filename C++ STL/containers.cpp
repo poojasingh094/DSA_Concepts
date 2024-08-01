@@ -62,11 +62,11 @@ v.insert(v.begin(), 300);       //{300,1,3}
 v.insert(v.begin() + 1, 2, 10); //{300,10,10,1,3}
 
 cout << v.size()     // 5
-v.pop_back() //{300,10,10,1}
+        v.pop_back() //{300,10,10,1}
 
-v1.swap(v2); // will swap two vector
-v.clear(); // erase entire vector
-cout << v.empty(); // returns false
+        v1.swap(v2); // will swap two vector
+v.clear();           // erase entire vector
+cout << v.empty();   // returns false
 
 /* list
 - Allows fast insertion and deletion at both the front and back of the list.
@@ -74,20 +74,58 @@ cout << v.empty(); // returns false
 - Internal operations use a doubly linked list structure,
 */
 
-list<int>ls;
+list<int> ls;
 ls.push_back(2);
 ls.push_front(5); // Inserting at the beginning (or any position other than the end) using insert can be slower because it involves shifting all subsequent elements to make space for the new element.
 ls.pop_front();
-//rest fns are same as vector: begin, end, clear,size, insert, swap, etc.
+// rest fns are same as vector: begin, end, clear, size, insert, swap, etc.
 
-//Deque
+// Deque
 
-deque<int>dq;
+deque<int> dq;
 dq.push_back(1);
 dq.push_front(2);
 dq.pop_back();
 dq.pop_front();
-//rest fns are same as vector and list
+// rest fns are same as vector and list
 
+// stack(LIFO)
 
+stack<int> st;
+st.push(1);
+st.push(3);
+cout << st.top();   // 3
+st.pop();           // Remove the top element (3)
+cout << st.size();  // 1
+cout << st.empty(); // 0
 
+stack<int> st1, st2;
+st1.swap(st2);
+// All the operations are are O(1), meaning they take constant time.
+
+// Queue- similar to stack, but follows FIFO
+
+queue<int> q;
+q.push(1);
+q.push(2);
+q.back() += 5;     // {1, 7}
+cout << q.front(); // 1
+q.pop();           //{7}
+// rest fns like size, swap, empty are same as stack
+
+// priority-queue- data is not stored in linear, a tree is maintained inside
+
+priority_queue<int> pq; // max-Heap(default behavior)
+pq.push(5);
+pq.push(2);
+pq.push(8);
+pq.push(10); //{10,8,5,2}
+pq.top();    // 10
+// size, swap, and empty functions are the same as in queue
+
+priority_queue<int, vector<int>, greater<int>> pq; // min-Heap
+pq.push(5);
+pq.push(2);
+pq.push(8);
+pq.push(10); //{2,5,8,10}
+pq.top();    // 2
