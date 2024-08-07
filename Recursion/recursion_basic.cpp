@@ -92,3 +92,42 @@ int main()
     print(1, N);
     return 0;
 }
+// Parameterized Recursion (In parameterized recursion, you pass the accumulating result as a parameter. )
+// Sum of first N numbers
+void f(int i, int sum) {
+    if (i < 1) {
+        cout << sum;
+        return;
+    }
+    f(i - 1, sum + i);
+}
+int main() {
+    int n = 3;
+    f(n, 0);  // Output: 6
+    return 0;
+}
+//Recursion Tree- f(3, 0)-> f(2, 3)-> f(1, 5)->f(0, 6)->print 6
+// Using Functional Recursion(The function returns a value, and the final result is built up by combining the results of recursive calls.)
+int sum(int n) {
+    if (n == 0) return 0;
+    return n + sum(n - 1);
+}
+int main() {
+    int n = 3;
+    cout << sum(n);  // Output: 6
+    return 0;
+}
+//Recursion Tree- 3 + f(2) -> where f(2)-> 2 + f(1) -> and f(1)-> 1+ f(0), where F(0) returns 0 
+//To Find Factorial using functional recursion
+int fact(int n) {
+    if (n == 0) return 1;
+    return n * fact(n - 1);
+}
+
+int main() {
+    int n = 3;
+    cout << fact(n);  // Output: 6
+    return 0;
+}
+// Parameterized Recursion: Useful when you want to accumulate results during the recursion.
+// Functional Recursion: Useful when you want to build the result through return values.
