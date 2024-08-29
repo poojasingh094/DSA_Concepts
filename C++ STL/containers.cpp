@@ -129,3 +129,61 @@ pq.push(2);
 pq.push(8);
 pq.push(10); //{2,5,8,10}
 pq.top();    // 2
+
+//set -> stores sorted and unique, inside it tree is maintained
+set <int> st;
+st.insert(1);
+st.insert(2);
+st.insert(3);// {1,2,3}
+//begin(), end(), size(), swap(), empty are same
+auto it = st.find(3); -> returns iterator
+auto it = st.find(4); -> st.end()-> point to right after end
+st.erase(2);
+int count = st.count(1); 1 if present, 0 if not
+auto it1  = st.find(2);
+auto it2 = st.find(4);
+st.erase(it1, it2);
+
+// In set, everything happens in (logN)
+
+//Multiset -> everything same as set but it stores duplicate element also
+Multiset <int> ms;
+ms.insert(1);
+ms.insert(1);
+ms.insert(1);
+ms.insert(1);
+ms.erase(1); //all 1's erased
+int cnt = ms.count(1);
+ms.erase(ms.find(1)); -> single 1 is erased
+ms.erase(ms.find(1), ms.find(1)+2);
+
+// unordered set -> stores unique not sorted, all fns are same as above
+// worst case-> O(N), Mostly O(1)
+
+//Map-> stores in {key, value} pair, where key is unique, and both can be any data type
+map <int, int> mpp;
+map <int, pair<int, int>> mpp;
+map <pair<int, int>, int>mpp;
+
+mpp[1] = 2; //{1,2}
+mpp.insert({2,4}); // {2,4}
+// map stores unique keys in sorted order
+mpp[{2,3}] = 10;
+
+for(auto it:mpp){
+    cout<<it.first<<" " << it.second <<endl;
+} //[{1,2}, {2,4}]
+cout << mpp[1]; //2
+cout << mpp[5]; //0
+
+auto it =mpp.find(3);
+cout<< *(it).second;
+
+//erase, swap, size, empty are same
+
+//Multimap-> everything same as map, only it can store multiple keys or duplicate keys bt in sorted order
+//mpp[key] cannot be used here
+
+// Unordered map -> no duplicate keys but not in sorted order.
+// worst case O(N), but mostly O(1)
+
