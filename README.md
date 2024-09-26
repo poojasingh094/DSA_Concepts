@@ -12,3 +12,6 @@ Welcome to this repository! I have included all the important concepts of Data S
 These notes are time-saving and efficient. They have been a valuable resource in my coding journey, and I hope these resources help you as much as they have helped me. Happy coding!:D
 
 Let's learn and code together:D
+
+## ACKNOWLEDGMENT:
+These notes are primarily based on the concepts taught by Striver in his DSA Playlist. The explanations and coding examples here are references to what he teaches, organized in a way that works best for my learning style. If you want to learn directly from the source, I highly recommend checking out his videos.
